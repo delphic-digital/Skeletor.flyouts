@@ -11,12 +11,12 @@ define(['jquery', 'skeletor.core'],function ($, Skeletor){
 		this.options = $.extend({}, this.defaults, options);
 		this._init();
 
-		Skeletor.instantiatePlugin(this, 'Flyouts');
+		Skeletor.instantiatePlugin(this);
 	};
 
 	// now we define the prototype
 	Flyouts.prototype = {
-		name: 'BrowserUpdate',
+		name: 'Flyouts',
 		version: '1.0.0',
 		defaults: {},
 		constructor: Flyouts,
@@ -28,5 +28,5 @@ define(['jquery', 'skeletor.core'],function ($, Skeletor){
 		}
 	}
 
-	Skeletor.registerPlugin(Flyouts, 'Flyouts');
+	Skeletor.registerPlugin(Flyouts);
 });

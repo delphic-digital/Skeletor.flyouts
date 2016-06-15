@@ -5,9 +5,32 @@
 </head>
 <body>
 	<p>Skeletor Flyouts Component</p>
-	<script data-main="index" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
 	<div class="test-component">
 		test content
 	</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
+	<script>
+		require.config({
+			paths: {
+				'jquery': '//code.jquery.com/jquery-3.0.0.min',
+				'skeletor.core': '//rawgit.com/delphic-digital/Skeletor.core/master/skeletor.core',
+			}
+		})
+
+		//DEMO
+		require(['skeletor.flyouts'], function(){
+			var $flyout = new Skeletor.Flyouts($('.test-component'), {
+				slideSpeed: 500,
+				multiExpand: true
+			});
+
+			//console.log(Skeletor)
+			$('.test-component').skeletor('open')
+			//or
+			$flyout.open();
+		})
+	</script>
+
 </body>
 </html>

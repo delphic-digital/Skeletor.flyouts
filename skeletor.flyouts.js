@@ -5,28 +5,22 @@
 
 define(['jquery', 'skeletor.core'],function ($, Skeletor){
 
-	// first we set up our constructor function
-	var Flyouts = function(element, options){
-		this.$element = element || $(document);
-		this.options = $.extend({}, this.defaults, options);
-		this._init();
+  function Flyouts(element, options) {
+		Flyouts.__super__.call(this, element, options, Flyouts.DEFAULTS);
+	}
 
-		Skeletor.instantiatePlugin(this);
+	Flyouts.VERSION = '0.0.1';
+
+	Flyouts.DEFAULTS = {
+		cssClass:'flyouts'
 	};
 
-	// now we define the prototype
-	Flyouts.prototype = {
-		name: 'Flyouts',
-		version: '1.0.0',
-		defaults: {},
-		constructor: Flyouts,
-		_init: function(){
-			console.log('init Flyouts')
+	Skeletor.Plugin.create(Flyouts, {
+		_init: function(element) {
+			console.log('init flyouts')
 		},
 		open: function(){
 			console.log('open flyout')
 		}
-	}
-
-	Skeletor.registerPlugin(Flyouts);
+	});
 });

@@ -2,12 +2,67 @@
 <html>
 <head>
 	<title>Skeletor Flyouts Component</title>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="skeletor.flyouts.css">
 </head>
 <body>
 	<p>Skeletor Flyouts Component</p>
-	<div class="test-component">
-		test content
-	</div>
+
+	<nav class="main-nav">
+		<ul class="main-nav__list">
+			<li class="main-nav__item">
+				<a href="#">Menu Item 1</a>
+				<div class="sub-nav">
+					<ul class="sub-nav__List">
+						<li><a href="#">Submenu Item 1</a></li>
+						<li><a href="#">Submenu Item 2</a></li>
+						<li><a href="#">Submenu Item 3</a></li>
+						<li><a href="#">Submenu Item 4</a></li>
+					</ul>
+					<ul class="sub-nav__List">
+						<li><a href="#">Submenu Item 5</a></li>
+						<li><a href="#">Submenu Item 6</a></li>
+						<li><a href="#">Submenu Item 7</a></li>
+						<li><a href="#">Submenu Item 8</a></li>
+					</ul>
+					<ul class="sub-nav__List">
+						<li><a href="#">Submenu Item 9</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="main-nav__item">
+				<a href="#">Menu Item 2</a>
+				<div class="sub-nav">
+					<ul class="sub-nav__List">
+						<li><a href="#">Submenu Item 1</a></li>
+						<li><a href="#">Submenu Item 3</a></li>
+						<li><a href="#">Submenu Item 4</a></li>
+						<li><a href="#">Submenu Item 5</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="main-nav__item">
+				<a href="#">Menu Item 3</a>
+				<div class="sub-nav">
+					<ul class="sub-nav__List">
+						<li><a href="#">Submenu Item 1</a></li>
+						<li><a href="#">Submenu Item 2</a></li>
+						<li><a href="h#">Submenu Item 3</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="main-nav__item">
+				<a href="#">Menu Item 4</a>
+				<div class="sub-nav">
+					<ul class="sub-nav__List">
+						<li><a href="#">Submenu Item 1</a></li>
+						<li><a href="#">Submenu Item 2</a></li>
+						<li><a href="#">Submenu Item 3</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</nav>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
 	<script>
@@ -21,15 +76,15 @@
 
 		//DEMO
 		require(['skeletor.flyouts'], function(){
-			var $flyout = new Skeletor.Flyouts($('.test-component'), {
-				slideSpeed: 500,
-				multiExpand: true
+			var $flyout = new Skeletor.Flyouts($('.main-nav__list'), {
+				testParam: 1,
 			});
-
-			//console.log(Skeletor)
+			$flyout._test();
+			//$('.test-component').skeletor('open')
+/*
 			$('.test-component').skeletor('open')
 			//or
-			$flyout.open();
+			$flyout.open();*/
 		})
 	</script>
 
